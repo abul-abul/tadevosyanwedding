@@ -1,0 +1,28 @@
+services:
+      admin.services:
+          class: AppBundle\Admin\ServicesAdmin
+          arguments: [~, AppBundle\Entity\Services, ~]
+          tags:
+              - {
+                  name: sonata.admin,
+                  manager_type: orm,
+                  label: Services,
+                  group: "Services",
+                  icon: '<i class="fa fa-users"></i>'
+                 }
+          public: true
+      admin.items:
+          class: AppBundle\Admin\ItemsAdmin
+          arguments: [~, AppBundle\Entity\Items, ~]
+          tags:
+              - {
+                  name: sonata.admin,
+                  manager_type: orm,
+                  label: Items,
+                  group: "Items",
+                  icon: '<i class="fa fa-users"></i>'
+                 }
+          public: true
+
+
+
