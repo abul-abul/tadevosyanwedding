@@ -27,6 +27,12 @@ class Services
      */
     protected $name;
 
+    /**
+     * @var
+     * @ORM\Column(name="description", type="text", nullable=false)
+     */
+    protected $description;
+
 
     /**
      * @ORM\OneToMany(targetEntity="Items", mappedBy="services",  cascade={"persist", "remove"})
@@ -151,5 +157,29 @@ class Services
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set description.
+     *
+     * @param string $description
+     *
+     * @return Services
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

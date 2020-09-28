@@ -30,6 +30,7 @@ class ServicesAdmin extends Admin
     {
         $formMapper
             ->add('name')
+            ->add('description')
             ->add('image', 'sonata_type_model_list',array( 'label' => 'Картинки' ), array('required' => false), array('link_parameters' => array('context' => 'default')))
 
         ;

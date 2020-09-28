@@ -3,11 +3,42 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        {% block stylesheets %}
+            <link href="{{ asset('bundles/app/css/glanz_library.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('bundles/app/fonts/themify-icons.css') }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ asset('bundles/app/css/glanz_style.css') }}" rel="stylesheet" type="text/css"/>
+
+            <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,600,700%7COpen+Sans:300,400,700%7CPlayfair+Display:400,400i,700,700i" rel="stylesheet">
+            <link href="{{ asset('bundles/app/fonts/marsha/stylesheet.css') }}" rel="stylesheet" type="text/css"/>
+        {% endblock %}
+        {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body class="gla_middle_titles">
+        {% block body %}
+            <div class="gla_page" id="gla_page">
+                <a href="#gla_page" class="gla_top ti ti-angle-up gla_go"></a>
+                <div class="gla_music_icon">
+                    <i class="ti ti-music"></i>
+                </div>
+                {#<div class="gla_music_icon_cont">#}
+                    {#<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/66757544&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>#}
+                {#</div>#}
+                <header>
+                    {% block header %}
+                    {% endblock %}
+                </header>
+
+
+
+                {% block main %} {% endblock %}
+            </div>
+
+        {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('bundles/app/js/jquery-1.12.4.min.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/glanz_library.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/glanz_script.js') }}"></script>
+
+        {% endblock %}
     </body>
 </html>
