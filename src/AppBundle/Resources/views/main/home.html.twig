@@ -43,12 +43,14 @@
 
             <div class="container text-center">
                 <p><img src="/bundles/app/images/animations/flower5.gif" data-bottom-top="@src:/bundles/app/images/animations/flower5.gif; opacity:1" class="gla_animated_flower" height="150" alt=""></p>
-                <h2>Our Story</h2>
-                <h3 class="gla_subtitle">The Fourth of July</h3>
+                <h2>{{ about.title }}</h2>
 
 
 
-                <p>My fiancé proposed on the Fourth of July. My mother asked us to go to the backyard to get some chairs and he took me by the shed where we could see all of the fireworks. He kissed me, then he took the ring box out of his pocket and asked me to be his wife. He was shaking a little. The proposal was a little silly but perfect, just like him." — Jeska Cords</p>
+
+                <p>
+                    {{ about.description }}
+                </p>
 
 
 
@@ -59,21 +61,7 @@
         <!-- section end -->
     </section>
 
-    <section class="gla_section gla_image_bck gla_fixed gla_wht_txt" data-stellar-background-ratio="0.8" data-image="/bundles/app/images/wedding/lauren_affonso/14214309838_1a8f80c65a_k.jpg">
 
-        <!-- Over -->
-        <div class="gla_over" data-color="#1e1d2d" data-opacity="0.4"></div>
-
-        <div class="container text-center">
-            <p><img src="/bundles/app/images/animations/savethedate_wh.gif" data-bottom-top="@src:/bundles/app/images/animations/savethedate_wh.gif" height="150" alt=""></p>
-            <h2>August 10th, 2017</h2>
-            <h3 class="gla_subtitle">St. Thomas's Church, <br>Bristol, U.K.</h3>
-            <div class="gla_countdown" data-year="2017" data-month="08" data-day="10"></div>
-
-        </div>
-        <!-- container end -->
-
-    </section>
 
 
     <section class="gla_section">
@@ -81,40 +69,17 @@
 
         <div class="container text-center">
             <p><img src="/bundles/app/images/animations/flower6.gif" data-bottom-top="@src:/bundles/app/images/animations/flower6.gif; opacity:1" class="gla_animated_flower" height="110" alt=""></p>
-            <h2>Wedding Details</h2>
-            <h3 class="gla_subtitle">When & Where</h3>
-            <p>Our ceremony and reception will be held at the Liberty House. Located on the Hudson River, it has a beautiful, unobstructed view of the World Trade One building and a convenient ferry that runs between it and Manhattan.</p>
+
             <div class="row text-center">
-                <div class="col-md-4 gla_round_block">
-                    <div class="gla_round_im gla_image_bck" data-image="/bundles/app/images/wedding/lauren_affonso/600x600/14214580180_4dbce3ed37_k.jpg"></div>
-                    <h3>The Reception</h3>
-                    <p>4:00 PM – 5:30 PM<br>
-                        St. Thomas's Church,<br>
-                        Bristol<br>
-                        U.K.<br>
-                        +1 777-123-4567</p>
-                    <a href="#" class="btn">View Map</a>
-                </div>
-                <div class="col-md-4 gla_round_block">
-                    <div class="gla_round_im gla_image_bck" data-image="/bundles/app/images/wedding/lauren_affonso/600x600/14214514238_c7a691994d_k.jpg"></div>
-                    <h3>The Ceremony</h3>
-                    <p>4:00 PM – 5:30 PM<br>
-                        St. Thomas's Church,<br>
-                        Bristol<br>
-                        U.K.<br>
-                        +1 777-123-4567</p>
-                    <a href="#" class="btn">View Map</a>
-                </div>
-                <div class="col-md-4 gla_round_block">
-                    <div class="gla_round_im gla_image_bck" data-image="/bundles/app/images/wedding/lauren_affonso/600x600/14214610370_ccda70fba1_k.jpg"></div>
-                    <h3>The Afterparty</h3>
-                    <p>4:00 PM – 5:30 PM<br>
-                        St. Thomas's Church,<br>
-                        Bristol<br>
-                        U.K.<br>
-                        +1 777-123-4567</p>
-                    <a href="#" class="btn">View Map</a>
-                </div>
+                {% for service in services %}
+                    <div class="col-md-4 gla_round_block">
+                        <div class="gla_round_im gla_image_bck" data-image="{% path service.image,'big' %}"></div>
+                        <h3>{{ service.name }}</h3>
+
+                        <a href="#" class="btn">Տեսնել</a>
+                    </div>
+                {% endfor %}
+
             </div>
 
 
@@ -134,7 +99,7 @@
 
             <div class="row">
                 <div class="col-md-8 col-md-push-2">
-                    <form action="https://formspree.io/your@mail.com" method="POST">
+                    <form action="" method="POST">
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Your name*</label>
@@ -145,24 +110,7 @@
                                 <input type="text" name="email" class="form-control form-opacity">
                             </div>
 
-                            <div class="col-md-6">
-                                <label>Will you attend?</label>
 
-                                <input type="radio" name="attend" value="Yes, I will be there">
-                                <span>Yes, I will be there</span><br>
-                                <input type="radio" name="attend" value="Sorry, I can't come">
-                                <span>Sorry, I can't come</span>
-
-                            </div>
-                            <div class="col-md-6">
-                                <label>Meal preference</label>
-                                <select name="meal" class="form-control form-opacity">
-                                    <option value="I eat anything">I eat anything</option>
-                                    <option value="Beef">Beef</option>
-                                    <option value="Chicken">Chicken</option>
-                                    <option value="Vegetarian">Vegetarian</option>
-                                </select>
-                            </div>
                             <div class="col-md-12">
                                 <label>Notes</label>
                                 <textarea name="message" class="form-control form-opacity"></textarea>
@@ -189,111 +137,109 @@
         <div class="container text-center">
             <p><img src="/bundles/app/images/animations/flower7.gif" data-bottom-top="@src:/bundles/app/images/animations/flower7.gif; opacity:1" class="gla_animated_flower" height="110" alt=""></p>
             <h2>The Day They Got Engaged</h2>
-            <p>Andy and Jeska met in university in the Graphic Design program. They both remember each other from orientation, but it wasn’t love at first sight, that’s for sure. Andy remembers Jeska as a ‘snooty art bitch (having been in the visual arts program at the time), and she remembers Andy being an ‘arrogant computer nerd’, boasting his knowledge of Macs over the other students.</p>
+
 
 
 
             <!-- grid -->
             <div class="gla_portfolio_no_padding grid">
 
-                <div class="col-sm-4 gla_anim_box grid-item engagement">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14214345610_af0e495ff2_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214345610_af0e495ff2_k.jpg" alt="">
-                        </a>
-
-
-
+                {% for item in items %}
+                    <div class="col-sm-4 gla_anim_box grid-item engagement">
+                        <div class="gla_shop_item">
+                            <a href="{% path item.image,'big' %}" class="lightbox">
+                                <img src="{% path item.image,'big' %}" alt="">
+                            </a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-sm-4 gla_anim_box grid-item engagement">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14214347748_db9bfb6322_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214347748_db9bfb6322_k.jpg" alt="">
-                        </a>
-
-
-                    </div>
-                </div>
-
-                <div class="col-sm-4 gla_anim_box grid-item ceremony">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14214358898_8eed03f1d6_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214358898_8eed03f1d6_k.jpg" alt="">
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-4 gla_anim_box grid-item engagement">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14214387908_8ad395d6d0_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214387908_8ad395d6d0_k.jpg" alt="">
-                        </a>
+                {% endfor %}
+                {#<div class="col-sm-4 gla_anim_box grid-item engagement">#}
+                    {#<div class="gla_shop_item">#}
+                        {#<a href="/bundles/app/images/wedding/lauren_affonso/14214347748_db9bfb6322_k.jpg" class="lightbox">#}
+                            {#<img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214347748_db9bfb6322_k.jpg" alt="">#}
+                        {#</a>#}
 
 
-                    </div>
-                </div>
+                    {#</div>#}
+                {#</div>#}
 
-                <div class="col-sm-4 gla_anim_box grid-item ceremony">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14214397640_d49d0e765d_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214397640_d49d0e765d_k.jpg" alt="">
-                        </a>
+                {#<div class="col-sm-4 gla_anim_box grid-item ceremony">#}
+                    {#<div class="gla_shop_item">#}
+                        {#<a href="/bundles/app/images/wedding/lauren_affonso/14214358898_8eed03f1d6_k.jpg" class="lightbox">#}
+                            {#<img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214358898_8eed03f1d6_k.jpg" alt="">#}
+                        {#</a>#}
 
+                    {#</div>#}
+                {#</div>#}
 
-                    </div>
-                </div>
-
-                <div class="col-sm-4 gla_anim_box grid-item engagement">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14214429749_ad31345b6d_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214429749_ad31345b6d_k.jpg" alt="">
-                        </a>
-
-
-                    </div>
-                </div>
-
-                <div class="col-sm-4 gla_anim_box grid-item ceremony">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14214471159_96ea39117f_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214471159_96ea39117f_k.jpg" alt="">
-                        </a>
+                {#<div class="col-sm-4 gla_anim_box grid-item engagement">#}
+                    {#<div class="gla_shop_item">#}
+                        {#<a href="/bundles/app/images/wedding/lauren_affonso/14214387908_8ad395d6d0_k.jpg" class="lightbox">#}
+                            {#<img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214387908_8ad395d6d0_k.jpg" alt="">#}
+                        {#</a>#}
 
 
-                    </div>
-                </div>
+                    {#</div>#}
+                {#</div>#}
 
-                <div class="col-sm-4 gla_anim_box grid-item engagement">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14214473720_7f2af51372_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214473720_7f2af51372_k.jpg" alt="">
-                        </a>
-
-
-                    </div>
-                </div>
-
-                <div class="col-sm-4 gla_anim_box grid-item ceremony">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14214610370_ccda70fba1_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214610370_ccda70fba1_k.jpg" alt="">
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-4 gla_anim_box grid-item ceremony">
-                    <div class="gla_shop_item">
-                        <a href="/bundles/app/images/wedding/lauren_affonso/14377952686_252620ebb7_k.jpg" class="lightbox">
-                            <img src="/bundles/app/images/wedding/lauren_affonso/600x600/14377952686_252620ebb7_k.jpg" alt="">
-                        </a>
+                {#<div class="col-sm-4 gla_anim_box grid-item ceremony">#}
+                    {#<div class="gla_shop_item">#}
+                        {#<a href="/bundles/app/images/wedding/lauren_affonso/14214397640_d49d0e765d_k.jpg" class="lightbox">#}
+                            {#<img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214397640_d49d0e765d_k.jpg" alt="">#}
+                        {#</a>#}
 
 
-                    </div>
-                </div>
+                    {#</div>#}
+                {#</div>#}
+
+                {#<div class="col-sm-4 gla_anim_box grid-item engagement">#}
+                    {#<div class="gla_shop_item">#}
+                        {#<a href="/bundles/app/images/wedding/lauren_affonso/14214429749_ad31345b6d_k.jpg" class="lightbox">#}
+                            {#<img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214429749_ad31345b6d_k.jpg" alt="">#}
+                        {#</a>#}
+
+
+                    {#</div>#}
+                {#</div>#}
+
+                {#<div class="col-sm-4 gla_anim_box grid-item ceremony">#}
+                    {#<div class="gla_shop_item">#}
+                        {#<a href="/bundles/app/images/wedding/lauren_affonso/14214471159_96ea39117f_k.jpg" class="lightbox">#}
+                            {#<img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214471159_96ea39117f_k.jpg" alt="">#}
+                        {#</a>#}
+
+
+                    {#</div>#}
+                {#</div>#}
+
+                {#<div class="col-sm-4 gla_anim_box grid-item engagement">#}
+                    {#<div class="gla_shop_item">#}
+                        {#<a href="/bundles/app/images/wedding/lauren_affonso/14214473720_7f2af51372_k.jpg" class="lightbox">#}
+                            {#<img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214473720_7f2af51372_k.jpg" alt="">#}
+                        {#</a>#}
+
+
+                    {#</div>#}
+                {#</div>#}
+
+                {#<div class="col-sm-4 gla_anim_box grid-item ceremony">#}
+                    {#<div class="gla_shop_item">#}
+                        {#<a href="/bundles/app/images/wedding/lauren_affonso/14214610370_ccda70fba1_k.jpg" class="lightbox">#}
+                            {#<img src="/bundles/app/images/wedding/lauren_affonso/600x600/14214610370_ccda70fba1_k.jpg" alt="">#}
+                        {#</a>#}
+
+                    {#</div>#}
+                {#</div>#}
+
+                {#<div class="col-sm-4 gla_anim_box grid-item ceremony">#}
+                    {#<div class="gla_shop_item">#}
+                        {#<a href="/bundles/app/images/wedding/lauren_affonso/14377952686_252620ebb7_k.jpg" class="lightbox">#}
+                            {#<img src="/bundles/app/images/wedding/lauren_affonso/600x600/14377952686_252620ebb7_k.jpg" alt="">#}
+                        {#</a>#}
+
+
+                    {#</div>#}
+                {#</div>#}
 
 
 

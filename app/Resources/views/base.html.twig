@@ -14,7 +14,9 @@
         {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
     </head>
     <body class="gla_middle_titles">
-        {% block body %}
+    {% set route = app.request.attributes.get('_route') %}
+
+    {% block body %}
             <div class="gla_page" id="gla_page">
                 <a href="#gla_page" class="gla_top ti ti-angle-up gla_go"></a>
                 <div class="gla_music_icon">
@@ -31,7 +33,7 @@
                 {% block main %}{% endblock %}
 
                 {% block footer %}
-
+                    {% if route != 'homepage' %}
                     <section class="gla_section gla_image_bck gla_wht_txt" data-color="#292929">
                         <div class="container">
                             <div class="row">
@@ -77,7 +79,8 @@
                             </div>
 
                         </div>
-                    </section
+                    </section>
+                    {% endif %}
                 {% endblock %}
             </div>
 

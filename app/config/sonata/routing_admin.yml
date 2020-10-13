@@ -23,6 +23,30 @@ services:
                   icon: '<i class="fa fa-users"></i>'
                  }
           public: true
+      admin.about:
+          class: AppBundle\Admin\AboutAdmin
+          arguments: [~, AppBundle\Entity\About, ~]
+          tags:
+              - {
+                  name: sonata.admin,
+                  manager_type: orm,
+                  label: About,
+                  group: "About",
+                  icon: '<i class="fa fa-users"></i>'
+                 }
+          public: true
+      admin.contact:
+          class: AppBundle\Admin\ContactAdmin
+          arguments: [~, AppBundle\Entity\Contact, ~]
+          tags:
+              - {
+                  name: sonata.admin,
+                  manager_type: orm,
+                  label: Contact,
+                  group: "Contact",
+                  icon: '<i class="fa fa-users"></i>'
+                 }
+          public: true
 
 
 

@@ -158,4 +158,28 @@ class Services
     {
         return $this->image;
     }
+
+    /**
+     * Set description.
+     *
+     * @param string $description
+     *
+     * @return Services
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description.
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
 }
