@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -19,7 +20,18 @@ class ContactController extends Controller
      */
     public function contactAction(Request $request)
     {
-
-       return [];
+        $em = $this->getDoctrine()->getManager();
+        $about =$em->getRepository("AppBundle:About")->findOneBy([]);
+        if($request->isMethod('post')) {
+            $data = $request->request->all();
+            $contactObj = new Contact();
+            $contactObj->setName($data['name']);
+            $contactObj->setEmail($data['email']);
+            $contactObj->setDescription($data['message']);
+            $em->persist($contactObj);
+            $em->flush();
+            return $this->redirectToRoute('contact');
+        }
+       return ['about' => $about];
     }
 }

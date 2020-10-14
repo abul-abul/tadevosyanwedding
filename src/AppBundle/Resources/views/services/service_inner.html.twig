@@ -1,0 +1,70 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+
+{% block main %}
+    {#{{ dump(services) }}#}
+    {#{% for it in services.items %}#}
+        {#{{ dump(it) }}#}
+    {#{% endfor %}#}
+
+    <div class="gla_page_title gla_image_bck gla_wht_txt" data-color="#282828">
+
+
+
+        <div class="container text-left">
+            <div class="row">
+
+                <div class="col-md-8">
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="breadcrumbs">
+                        <a href="{{ path('homepage') }}">Home</a><span>Services</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <section class="gla_section gla_image_bck">
+
+
+        <div class="container text-center">
+            <p><img src="/bundles/app/images/animations/flower7.gif" data-bottom-top="@src:/bundles/app/images/animations/flower7.gif; opacity:1" class="gla_animated_flower" height="110" alt=""></p>
+            <h2>{{ services.name }}</h2>
+            <p>
+                {{ services.description }}
+            </p>
+
+
+            <div class="button-group filter-button-group">
+                <a data-filter="*">Show All</a>
+                <a data-filter=".engagement">Engagement</a>
+
+            </div>
+            <!-- grid -->
+            <div class="gla_portfolio_no_padding grid">
+
+                {% for item in services.items %}
+                    <div class="col-sm-4 gla_anim_box grid-item engagement">
+                        <div class="gla_shop_item">
+                            <a href="{% path item.image,'big' %}" class="lightbox">
+                                <img src="{% path item.image,'big' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+            <!-- grid end -->
+
+
+
+        </div>
+        <!-- container end -->
+
+    </section>
+{% endblock %}

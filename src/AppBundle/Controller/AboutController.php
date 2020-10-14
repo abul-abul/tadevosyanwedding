@@ -19,7 +19,25 @@ class AboutController extends Controller
      */
     public function aboutAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $about =$em->getRepository("AppBundle:About")->findOneBy([]);
 
-       return [];
+        $query = 'SELECT id FROM  services
+                ORDER BY RAND()
+                LIMIT 2';
+
+        $statement = $em->getConnection()->prepare($query);
+
+        $statement->execute();
+
+        $rendServices = $statement->fetchAll();
+
+        $services = [];
+        foreach ($rendServices as $rendId){
+            $product =$em->getRepository("AppBundle:Services")->find($rendId['id']);
+            array_push($services,$product);
+        }
+
+        return ['about'=>$about,'services'=>$services];
     }
 }

@@ -47,6 +47,18 @@ services:
                   icon: '<i class="fa fa-users"></i>'
                  }
           public: true
+      admin.siteInfo:
+          class: AppBundle\Admin\SiteInfoAdmin
+          arguments: [~, AppBundle\Entity\SiteInfo, ~]
+          tags:
+              - {
+                  name: sonata.admin,
+                  manager_type: orm,
+                  label: Site Info,
+                  group: "Site Info",
+                  icon: '<i class="fa fa-users"></i>'
+                 }
+          public: true
 
 
 

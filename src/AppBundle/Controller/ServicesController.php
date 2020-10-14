@@ -19,7 +19,22 @@ class ServicesController extends Controller
      */
     public function servicesAction(Request $request)
     {
-
-       return [];
+        $em = $this->getDoctrine()->getManager();
+        $services = $em->getRepository("AppBundle:Services")->findAll();
+        return ['services' => $services];
     }
+
+
+    /**
+     * @Route("/services-inner/{id}", name="servicesInner")
+     * @Template()
+     */
+    public function serviceInnerAction($id,Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $services = $em->getRepository("AppBundle:Services")->find($id);
+        return ['services' => $services];
+    }
+
+
 }
