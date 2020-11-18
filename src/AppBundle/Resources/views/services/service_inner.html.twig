@@ -42,20 +42,35 @@
 
             <div class="button-group filter-button-group">
                 <a data-filter="*">Show All</a>
-                <a data-filter=".engagement">Engagement</a>
+                <a data-filter=".image">image</a>
+                <a data-filter=".video">video</a>
 
             </div>
             <!-- grid -->
             <div class="gla_portfolio_no_padding grid">
 
                 {% for item in services.items %}
-                    <div class="col-sm-4 gla_anim_box grid-item engagement">
-                        <div class="gla_shop_item">
-                            <a href="{% path item.image,'big' %}" class="lightbox">
-                                <img src="{% path item.image,'big' %}" alt="">
-                            </a>
+                    {% if item.image %}
+                        <div class="col-sm-4 gla_anim_box grid-item image">
+                            <div class="gla_shop_item">
+                                <a href="{% path item.image,'big' %}" class="lightbox">
+                                    <img src="{% path item.image,'big' %}" alt="">
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
+                    {% if item.video %}
+                        <div class="col-sm-4 gla_anim_box grid-item video">
+                            <div class="gla_shop_item">
+                                <iframe width="400" height="250" src="{{ item.video }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                                {#<iframe width="400" height="250"   frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen#}
+                                        {#src="{{ item.video }}">#}
+                                {#</iframe>#}
+                            </div>
+                        </div>
+                    {% endif %}
+
+
                 {% endfor %}
 
             </div>

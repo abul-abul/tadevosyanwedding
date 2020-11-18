@@ -20,8 +20,9 @@ class ItemsAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('video')
             ->add('services')
+            ->add('video')
+
 
         ;
     }
@@ -30,8 +31,8 @@ class ItemsAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('video')
             ->add('services')
+            ->add('video')
             ->add('image', 'sonata_type_model_list',array( 'label' => 'Картинки' ), array('required' => false), array('link_parameters' => array('context' => 'default')))
 
 
@@ -43,8 +44,9 @@ class ItemsAdmin extends Admin
     {
         $datagridMapper
             ->add('id')
-            ->add('video')
             ->add('services')
+            ->add('video')
+
 
 
         ;
@@ -55,8 +57,8 @@ class ItemsAdmin extends Admin
     {
         $listMapper
             ->add('id')
-            ->add('video')
             ->add('services')
+            ->add('video')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
