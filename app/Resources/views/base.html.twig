@@ -20,9 +20,10 @@
             <div class="gla_page" id="gla_page">
                 <a href="#gla_page" class="gla_top ti ti-angle-up gla_go"></a>
                 {% if route == 'homepage' %}
-                <div class="gla_music_icon">
+                <div class="gla_music_icon playMusic">
                     <i class="ti ti-music"></i>
                 </div>
+
                 {% endif %}
                 <header>
                     {% block header %}{% endblock %}
@@ -34,55 +35,82 @@
                 {% block main %}{% endblock %}
 
                 {% block footer %}
-                    {% if route != 'homepage' %}
-                    <section class="gla_section gla_image_bck gla_wht_txt" data-color="#292929">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4">
-                                    <h4>Contact Us</h4>
-                                    <p>
-                                        68 Cardamon Place, Melbourne Vic 3000<br>
-                                        Call us: 1.777.77.777<br>
-                                        <a href="mailto:hello@glanztheme.com">hello@glanztheme.com</a>
-                                    </p>
 
-                                    <form action="#">
-                                        <input placeholder="Enter Your Email" class="form-control form-opacity no-margin newsletter_input" type="email" required/>
-                                        <a href="#" class="btn">Subscribe</a>
+                    <audio style="display: none" id="player" autoplay controls><source src="/bundles/app/audio/music.mp3" type="audio/mp3" ></audio>
 
-                                    </form>
 
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <h4>Latest Posts</h4>
-                                    <ul class="list-unstyled">
-                                        <li><a href="#">Made with Love in Toronto</a></li>
-                                        <li><a href="#">Startup News & Emerging Tech</a></li>
-                                        <li><a href="#">Bitcoin Will Soon Rule The World</a></li>
-                                        <li><a href="#">Wearable Technology On The Rise</a></li>
-                                        <li><a href="#">Learn Web Design in 30 Days!</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 col-sm-4">
-                                    <h4>Latest Tweets</h4>
-                                    <div class="gla_twitter">
-                                        <a class="twitter-timeline" data-tweet-limit="1" data-theme="dark" data-link-color="#eee" data-chrome="noscrollbar noheader nofooter noborders transparent" href="https://twitter.com/envato">Tweets by Envato</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    {#<audio id="my_audio" src="/bundles/app/audio/music.mp3" loop="loop"></audio>#}
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="gla_block">
-                                        <p>© Glanz 2017. Copyright. Glanz Theme.</p>
-                                    </div>
-                                </div>
-                            </div>
+                    {#<audio autoplay loop>#}
+
+                        {#<source src="/bundles/app/audio/music.mp3" type="audio/mpeg">#}
+                    {#</audio>#}
+                    {#<audio controls autoplay>#}
+                        {#<source src="/bundles/app/audio/music.mp3" type="audio/mpeg" >#}
+                    {#</audio>#}
+                    {#{% if route != 'homepage' %}#}
+                    {#<section class="gla_section gla_image_bck gla_wht_txt" data-color="#292929">#}
+                        {#<div class="container">#}
+                            {#<div class="row">#}
+                                {#<div class="col-md-4 col-sm-4">#}
+                                    {#<h4>Contact Us</h4>#}
+                                    {#<p>#}
+                                        {#68 Cardamon Place, Melbourne Vic 3000<br>#}
+                                        {#Call us: 1.777.77.777<br>#}
+                                        {#<a href="mailto:hello@glanztheme.com">hello@glanztheme.com</a>#}
+                                    {#</p>#}
+
+                                    {#<form action="#">#}
+                                        {#<input placeholder="Enter Your Email" class="form-control form-opacity no-margin newsletter_input" type="email" required/>#}
+                                        {#<a href="#" class="btn">Subscribe</a>#}
+
+                                    {#</form>#}
+
+                                {#</div>#}
+                                {#<div class="col-md-4 col-sm-4">#}
+                                    {#<h4>Latest Posts</h4>#}
+                                    {#<ul class="list-unstyled">#}
+                                        {#<li><a href="#">Made with Love in Toronto</a></li>#}
+                                        {#<li><a href="#">Startup News & Emerging Tech</a></li>#}
+                                        {#<li><a href="#">Bitcoin Will Soon Rule The World</a></li>#}
+                                        {#<li><a href="#">Wearable Technology On The Rise</a></li>#}
+                                        {#<li><a href="#">Learn Web Design in 30 Days!</a></li>#}
+                                    {#</ul>#}
+                                {#</div>#}
+                                {#<div class="col-md-4 col-sm-4">#}
+                                    {#<h4>Latest Tweets</h4>#}
+                                    {#<div class="gla_twitter">#}
+                                        {#<a class="twitter-timeline" data-tweet-limit="1" data-theme="dark" data-link-color="#eee" data-chrome="noscrollbar noheader nofooter noborders transparent" href="https://twitter.com/envato">Tweets by Envato</a> <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>#}
+
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                            {#<div class="row">#}
+                                {#<div class="col-md-12">#}
+                                    {#<div class="gla_block">#}
+                                        {#<p>© Glanz 2017. Copyright. Glanz Theme.</p>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+
+                        {#</div>#}
+                    {#</section>#}
+                    {#{% endif %}#}
+                    <section class="gla_section gla_image_bck gla_fixed gla_wht_txt" data-stellar-background-ratio="0.8" data-image="/bundles/app/images/wedding/lauren_affonso/14377952686_252620ebb7_k.jpg">
+
+                        <!-- Over -->
+                        <div class="gla_over" data-color="#1e1d2d" data-opacity="0.4"></div>
+
+                        <div class="container text-center">
+                            <p><img src="/bundles/app/images/animations/thnyou_wh.gif" alt="" height="200" data-bottom-top="@src:/bundles/app/images/animations/thnyou_wh.gif"></p>
 
                         </div>
+                        <!-- container end -->
+
                     </section>
-                    {% endif %}
                 {% endblock %}
+                <audio src="https://www.bensound.com/bensound-music/bensound-moose.mp3"></audio>
+
             </div>
 
         {% endblock %}
@@ -90,7 +118,17 @@
             <script src="{{ asset('bundles/app/js/jquery-1.12.4.min.js') }}"></script>
             <script src="{{ asset('bundles/app/js/glanz_library.js') }}"></script>
             <script src="{{ asset('bundles/app/js/glanz_script.js') }}"></script>
+            <script src="{{ asset('bundles/app/js/init.js') }}"></script>
+            <script>
 
+                // window.onload = function() {
+                //     document.getElementById("my_audio").play();
+                // }
+
+                // playAudio()
+
+                // playAudio()
+            </script>
         {% endblock %}
     </body>
 </html>

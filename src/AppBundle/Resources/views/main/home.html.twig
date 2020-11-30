@@ -122,11 +122,11 @@
 
         <div class="container text-center">
             <p><img src="/bundles/app/images/animations/flower7.gif" data-bottom-top="@src:/bundles/app/images/animations/flower7.gif; opacity:1" class="gla_animated_flower" height="110" alt=""></p>
-            <h2>The Day They Got Engaged</h2>
-
+            {#<h2>The Day They Got Engaged</h2>#}
 
             <div class="gla_portfolio_no_padding grid">
                 {% for item in items %}
+                    {% if item.image is not null %}
                     <div class="col-sm-4 gla_anim_box grid-item engagement">
                         <div class="gla_shop_item">
                             <a href="{% path item.image,'big' %}" class="lightbox">
@@ -134,6 +134,7 @@
                             </a>
                         </div>
                     </div>
+                    {% endif %}
                 {% endfor %}
 
             </div>
@@ -145,17 +146,6 @@
 
 
 
-        <section class="gla_section gla_image_bck gla_fixed gla_wht_txt" data-stellar-background-ratio="0.8" data-image="/bundles/app/images/wedding/lauren_affonso/14377952686_252620ebb7_k.jpg">
 
-            <!-- Over -->
-            <div class="gla_over" data-color="#1e1d2d" data-opacity="0.4"></div>
-
-            <div class="container text-center">
-                <p><img src="/bundles/app/images/animations/thnyou_wh.gif" alt="" height="200" data-bottom-top="@src:/bundles/app/images/animations/thnyou_wh.gif"></p>
-
-            </div>
-            <!-- container end -->
-
-        </section>
 
 {% endblock %}

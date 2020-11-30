@@ -60,9 +60,12 @@
                         </div>
                     {% endif %}
                     {% if item.video %}
+                        {#<iframe width="560" height="315" src="https://www.youtube.com/embed/JMoI_MyO9BA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>#}
+
                         <div class="col-sm-4 gla_anim_box grid-item video">
                             <div class="gla_shop_item">
-                                <iframe width="400" height="250" src="{{ item.video }}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+                                <iframe width="400" height="250" src="{{ item.video }}" frameborder="0" allow="encrypted-media"></iframe>
                                 {#<iframe width="400" height="250"   frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen#}
                                         {#src="{{ item.video }}">#}
                                 {#</iframe>#}
