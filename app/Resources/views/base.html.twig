@@ -19,12 +19,11 @@
     {% block body %}
             <div class="gla_page" id="gla_page">
                 <a href="#gla_page" class="gla_top ti ti-angle-up gla_go"></a>
-                {% if route == 'homepage' %}
-                <div class="gla_music_icon playMusic">
-                    <i class="ti ti-music"></i>
-                </div>
-
-                {% endif %}
+                {#{% if route == 'homepage' %}#}
+                    <div class="gla_music_icon playMusic">
+                        <i class="ti ti-music"></i>
+                    </div>
+                {#{% endif %}#}
                 <header>
                     {% block header %}{% endblock %}
 
