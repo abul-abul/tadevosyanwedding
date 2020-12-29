@@ -22,6 +22,8 @@ class ContactController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $about =$em->getRepository("AppBundle:About")->findOneBy([]);
+        $info =$em->getRepository("AppBundle:SiteInfo")->findOneBy([]);
+
         if($request->isMethod('post')) {
             $data = $request->request->all();
             $contactObj = new Contact();
@@ -32,6 +34,6 @@ class ContactController extends Controller
             $em->flush();
             return $this->redirectToRoute('contact');
         }
-       return ['about' => $about];
+       return ['about' => $about,'info'=>$info];
     }
 }

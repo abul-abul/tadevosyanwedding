@@ -14,8 +14,8 @@
             <!-- Slider Texts -->
             <div class="gla_slide_txt gla_slide_center_middle text-center">
                 <div class="gla_flower gla_flower2">
-                    {#<img src="/bundles/app/images/wedding/lauren_affonso/14214412498_73d4296c75_k_sm.jpg" alt="">#}
-                    <img src="{{ asset('bundles/app/images/main/742.jpg') }}" alt="">
+                    <img src="/bundles/app/images/wedding/lauren_affonso/14214412498_73d4296c75_k_sm.jpg" alt="">
+                    {#<img src="{{ asset('bundles/app/images/main/742.jpg') }}" alt="">#}
                 </div>
 
 
@@ -89,21 +89,21 @@
                     <form action="" method="POST">
                         <div class="row">
                             <div class="col-md-6">
-                                <label>Your name*</label>
+                                <label>Անուն*</label>
                                 <input type="text" name="name" class="form-control form-opacity" required>
                             </div>
                             <div class="col-md-6">
-                                <label>Your e-mail*</label>
+                                <label>էլ. հասցե*</label>
                                 <input type="text" name="email" class="form-control form-opacity" required>
                             </div>
 
 
                             <div class="col-md-12">
-                                <label>Notes</label>
+                                <label>Նշումներ</label>
                                 <textarea name="message" class="form-control form-opacity" required></textarea>
                             </div>
                             <div class="col-md-12">
-                                <input type="submit" class="btn submit" value="Send">
+                                <input type="submit" class="btn submit" value="Ուղարկել">
                             </div>
                         </div>
                     </form>
@@ -146,7 +146,7 @@
     </section>
 
 
-
+    <audio style="display: none" id="player" autoplay controls><source src="/bundles/app/audio/music.mp3" type="audio/mp3" ></audio>
 
 
 {% endblock %}

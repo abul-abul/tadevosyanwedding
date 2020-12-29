@@ -11,15 +11,24 @@
 
                 <div class="col-md-8">
                     <div class="gla_footer_social">
-                        <a href="https://www.facebook.com/Tadevosyan.Gegham" target="_blank"><i class="ti ti-facebook gla_icon_box"></i></a>
-                        <a href="https://www.instagram.com/tadevosyan_wedding_house" target="_blank"><i class="ti ti-instagram gla_icon_box"></i></a>
+                        <a href="{{ info.facebook }}" target="_blank"><i class="ti ti-facebook gla_icon_box"></i></a>
+                        <a href="{{ info.instagram }}" target="_blank"><i class="ti ti-instagram gla_icon_box"></i></a>
 
+                    </div>
+                    <div>
+                        <span>{{ info.phone }}</span>
+                    </div>
+                    <div>
+                        <span>{{ info.address }}</span>
+                    </div>
+                    <div>
+                        <span>{{ info.email }}</span>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="breadcrumbs">
-                        <a href="{{ path('homepage') }}">Home</a><span>Contact</span>
+                        <a href="{{ path('homepage') }}">Գլխավոր</a><span>Կապ</span>
                     </div>
                 </div>
 
@@ -44,20 +53,20 @@
                         <form action="" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label>Your name*</label>
+                                    <label>Անուն*</label>
                                     <input type="text" name="name" class="form-control form-opacity" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Your e-mail*</label>
+                                    <label>էլ. հասցե*</label>
                                     <input type="text" name="email" class="form-control form-opacity" required>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <label>Notes</label>
+                                    <label>Նշումներ</label>
                                     <textarea name="message" class="form-control form-opacity" required></textarea>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="submit" class="btn submit" value="Send">
+                                    <input type="submit" class="btn submit" value="Ուղարկել">
                                 </div>
                             </div>
                         </form>
