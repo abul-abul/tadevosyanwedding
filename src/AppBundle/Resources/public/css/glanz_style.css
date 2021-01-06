@@ -570,6 +570,7 @@ blockquote footer {
 	max-width: 600px;
 	margin-right: auto;
 	margin-left: auto;
+	font-size: 20px;
 }
 .form-control {
 	margin-bottom: 20px;
@@ -1792,8 +1793,8 @@ ul.mega-menu {
 			float: left;
 		}
 			.gla_logo_container img {
-				height: 63px;
-				width: 121px;
+				height: 40px;
+				width: auto;
 				display: inline-block;
 				top: 22px;
 				position: relative;
