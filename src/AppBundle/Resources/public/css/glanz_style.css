@@ -5336,6 +5336,8 @@ footer {
 	transition: all 0.3s;
 	padding: 20px;
 	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
 }
 	.gla_shop_item_title:before,
 	.gla_news_title:before {
