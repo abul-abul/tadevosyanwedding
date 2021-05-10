@@ -41,15 +41,15 @@
 
 
             <div class="button-group filter-button-group">
-                <a data-filter="*">Բոլորը</a>
-                <a data-filter=".image">Նկար</a>
-                <a data-filter=".video">Տեսանյութ</a>
+                <a style="font-size: 25px" data-filter="*">Բոլորը</a>
+                <a style="font-size: 25px" data-filter=".image">Նկար</a>
+                <a style="font-size: 25px" data-filter=".video">Տեսանյութ</a>
 
             </div>
             <!-- grid -->
             <div class="gla_portfolio_no_padding grid">
 
-                {% for item in services.items %}
+                {% for item in services.items|reverse %}
                     {% if item.image %}
                         <div class="col-sm-4 gla_anim_box grid-item image">
                             <div class="gla_shop_item">
